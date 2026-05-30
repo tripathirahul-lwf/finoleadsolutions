@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "functions": {
+    "**/*.php": {
+      "runtime": "vercel-php@0.7.2"
+    }
+  },
+  "routes": [
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/uploads/(.*)", "dest": "/uploads/$1" },
+    { "src": "/favicon.svg", "dest": "/assets/images/favicon.svg" },
+    
+    { "src": "/services/payday-loan-crm", "dest": "/services.php?service=payday-loan-crm" },
+    { "src": "/services/collection-crm", "dest": "/services.php?service=collection-crm" },
+    { "src": "/services/lead-management-crm", "dest": "/services.php?service=lead-management-crm" },
+    { "src": "/services/recovery-management-software", "dest": "/services.php?service=recovery-management-software" },
+    { "src": "/services/loan-management-software", "dest": "/services.php?service=loan-management-software" },
+    
+    { "src": "/about", "dest": "/about.php" },
+    { "src": "/services", "dest": "/services.php" },
+    { "src": "/products", "dest": "/products.php" },
+    { "src": "/industries", "dest": "/industries.php" },
+    { "src": "/technology", "dest": "/technology.php" },
+    { "src": "/security", "dest": "/security.php" },
+    { "src": "/case-studies", "dest": "/case-studies.php" },
+    { "src": "/contact", "dest": "/contact.php" },
+    { "src": "/request-demo", "dest": "/request-demo.php" },
+    { "src": "/thankyou", "dest": "/thankyou.php" },
+    
+    { "src": "/blog", "dest": "/blog/index.php" },
+    { "src": "/blog/([a-zA-Z0-9-]+)", "dest": "/blog/post.php?slug=$1" },
+    
+    { "src": "/careers", "dest": "/careers/index.php" },
+    { "src": "/careers/([0-9]+)", "dest": "/careers/job.php?id=$1" },
+    
+    { "src": "/(.*)", "dest": "/index.php" }
+  ]
+}
