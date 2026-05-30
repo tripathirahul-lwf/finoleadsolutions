@@ -1,0 +1,48 @@
+# ----------------------------------------------------------------------
+# Finolead Solutions - Premium Enterprise Rewrite Rules (Technical SEO)
+# Supports clean, search-friendly URLs for search engines and AI agents.
+# ----------------------------------------------------------------------
+
+RewriteEngine On
+
+# Ensure files and directories are not rewritten
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# 1. Specialized Pretty URLs for Service Offerings
+RewriteRule ^services/payday-loan-crm$ services.php?service=payday-loan-crm [L,QSA]
+RewriteRule ^services/collection-crm$ services.php?service=collection-crm [L,QSA]
+RewriteRule ^services/lead-management-crm$ services.php?service=lead-management-crm [L,QSA]
+RewriteRule ^services/recovery-management-software$ services.php?service=recovery-management-software [L,QSA]
+RewriteRule ^services/loan-management-software$ services.php?service=loan-management-software [L,QSA]
+
+# 2. General Page Rewrites
+RewriteRule ^about$ about.php [L,QSA]
+RewriteRule ^services$ services.php [L,QSA]
+RewriteRule ^products$ products.php [L,QSA]
+RewriteRule ^industries$ industries.php [L,QSA]
+RewriteRule ^technology$ technology.php [L,QSA]
+RewriteRule ^security$ security.php [L,QSA]
+RewriteRule ^case-studies$ case-studies.php [L,QSA]
+RewriteRule ^contact$ contact.php [L,QSA]
+RewriteRule ^request-demo$ request-demo.php [L,QSA]
+RewriteRule ^thankyou$ thankyou.php [L,QSA]
+
+# 3. Blog System Rewrites
+RewriteRule ^blog$ blog/index.php [L,QSA]
+RewriteRule ^blog/([a-zA-Z0-9-]+)$ blog/post.php?slug=$1 [L,QSA]
+
+# 4. Careers Desk Rewrites
+RewriteRule ^careers$ careers/index.php [L,QSA]
+RewriteRule ^careers/([0-9]+)$ careers/job.php?id=$1 [L,QSA]
+
+# ----------------------------------------------------------------------
+# Security Headers Integration
+# ----------------------------------------------------------------------
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Content-Security-Policy "default-src 'self' https: 'unsafe-inline' 'unsafe-eval' data:; img-src 'self' https: data:; font-src 'self' https: data:;"
+</IfModule>

@@ -1,0 +1,16 @@
+# ----------------------------------------------------------------------
+# Robots.txt for Finolead Solutions - Premium Fintech CRM Platforms
+# Optimized for Google, Bing, ChatGPT Search, Gemini AI and voice search.
+# ----------------------------------------------------------------------
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /blog/
+Allow: /careers/
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /uploads/
+
+# Sitemap location (Dynamic canonical production URL)
+Sitemap: https://finoleadsolutions.com/sitemap.xml
